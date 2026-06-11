@@ -1,5 +1,12 @@
+# Environment
 venv/
 .env
+
+# Logs
 log*
+
+# Git
 .git
+
+# Data
 data

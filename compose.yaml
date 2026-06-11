@@ -15,8 +15,3 @@ services:
       - ./data:/app/world
 
     restart: unless-stopped
-
-    environment:
-      # replace the default values with the ones from the .env-configuration file
-      - MAX_PLAYERS=${MAX_PLAYERS}
-      - DIFFICULTY=${DIFFICULTY}    
