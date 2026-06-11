@@ -1,0 +1,22 @@
+services:
+  mc-server:
+    container_name: mc-server
+
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    ports:
+      # expose the Minecraft server port outside of container
+      - "8888:25565"
+
+    volumes:
+      # Only the mutable data is updated so that the data is retained even after the container is restarted
+      - ./data:/app/world
+
+    restart: unless-stopped
+
+    environment:
+      # replace the default values with the ones from the .env-configuration file
+      - MAX_PLAYERS=${MAX_PLAYERS}
+      - DIFFICULTY=${DIFFICULTY}    

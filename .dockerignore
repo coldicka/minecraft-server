@@ -1,0 +1,11 @@
+.env
+*.log
+.git
+*.md
+*.pdf
+Dockerfile
+.dockerignore
+.gitignore
+compose.yaml
+*.gitlab
+*.github
