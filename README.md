@@ -41,7 +41,7 @@ cd minecraft-server
 docker compose up -d
 ```
 
-* Download the minecraf installer [quote](https://www.minecraft.net/de-de/download)
+* Download the [minecraf installer](https://www.minecraft.net/de-de/download)
 * Start the game and log in using a Java Minecraft client.
 * Select **Multiplayer**
 * Click **Direct connection**
