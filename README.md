@@ -35,6 +35,12 @@ git clone https://github.com/coldicka/minecraft-server.git
 cd minecraft-server
 ```
 
+* Copy the example environment file to the directory
+
+```bash
+cp example.env .env
+```
+
 * Run the server
 
 ```bash
