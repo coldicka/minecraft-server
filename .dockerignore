@@ -1,20 +1,4 @@
-# Environment
 .env
-
-# Logs
 *.log
-
-# Git
 .git
-.gitignore
-*.gitlab
-*.github
-
-# Docker
-compose.yaml
-Dockerfile
-.dockerignore
-
-# Documents
 *.md
-*.pdf
