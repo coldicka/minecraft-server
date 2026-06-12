@@ -4,54 +4,54 @@ This repository contains everything required to set up, run, and maintain a pers
 
 ## Table of contents
 
-* [Minecraft Server](#minecraft-server)
+* [Prerequisites](#prerequisites)
 * [Quickstart](#quickstart)
-  * [Run the server](#run-the-server)
 * [Usage](#usage)
 * [Testing](#testing)
 
-## Quickstart
-
-If you're following setup instructions for a Minecraft server project, the sequence would generally look like this:
-
-```
-# Navigate to the parent directory where you want the project
-cd /path/to/your/projects
-
-# Clone the repository from GitHub
-git clone https://github.com/coldicka/minecraft-server.git
-
-# Enter the cloned project directory
-cd minecraft-server
-```
-
-A few prerequisites:
+## Prerequisites
 
 * Docker Engine should be installed and running.
 * Git should be installed (git --version).
 * You should be comfortable using a terminal/shell and basic Docker concepts.
 
-### Run the server
+## Quickstart
 
-You can start the server directly with a simple Docker Compose command.
+* Navigate to the parent directory where you want the project
 
 ```bash
-$ docker compose up -d
+cd /path/to/your/projects
+```
+
+* Clone the repository from GitHub
+
+```bash
+git clone https://github.com/coldicka/minecraft-server.git
+```
+
+* Enter the cloned project directory
+
+```bash
+cd minecraft-server
+```
+
+* Run the server
+
+```bash
+docker compose up -d
 ```
 
 * Download the minecraf installer [quote](https://www.minecraft.net/de-de/download)
 * Start the game and log in using a Java Minecraft client.
-* Select `Multiplayer`
-* Click `Direct connection`
+* Select **Multiplayer**
+* Click **Direct connection**
 * Enter the server's IP address and port
 
 ## Usage
 
-### adjust the server configuration
+This configuration uses a standard Minecraft server running version 26.1.2. As the environment is intended primarily for documentation and testing purposes, and because system resources are limited, the server is configured with a minimum of 1 GB and a maximum of 2 GB of RAM. These values can be adjusted, if required, by modifying the corresponding variables in the .env file.
 
-Minecraft uses some configuration [settings](https://minecraft.wiki/w/Server.properties) that are already set as defaults. If you want to change any of them, then
-
-* Open the **server.properties** file and change the default configuration values there.
+The primary configuration file for a multiplayer server is server.properties, which defines the server's core settings. Some of these settings can be overridden through environment variables specified in the .env file. To apply these overrides, the relevant environment variables must be processed within entrypoint.sh, which then updates the corresponding values in server.properties before the server starts.
 
 ## Testing
 
@@ -63,13 +63,13 @@ This is a set of instructions for testing a Minecraft server using either a Mine
 * Create a Python virtual environment and install the MCStatus packag.
 
 ```bash
-$ sudo apt update
-$ sudo apt install python3-venv -y
-$ python -m venv <venv-name>
-$ source ~/path/to/project/<venv-name>/bin/activate
+sudo apt update
+sudo apt install python3-venv -y
+python -m venv <venv-name>
+source ~/path/to/project/<venv-name>/bin/activate
 
 # Install MCStatus
-$ python3 -m pip install mcstatus
+python3 -m pip install mcstatus
 ```
   
 * Open the **server.properties** file and change the default configuration value:

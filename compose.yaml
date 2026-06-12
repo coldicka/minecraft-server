@@ -12,6 +12,8 @@ services:
 
     volumes:
       # Only the mutable data is updated so that the data is retained even after the container is restarted
-      - ./data:/app/world
+      - data:/app/world
 
     restart: unless-stopped
+volumes:
+  data:
